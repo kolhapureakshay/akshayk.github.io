@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="description" content="Free online currency converter with real-time exchange rates. Convert between USD, EUR, INR and more. Easy-to-use and accurate currency conversion tool.">
+    <meta name="keywords" content="currency converter, online currency converter, exchange rates, money converter, currency calculator">
+    <meta name="author" content="Calculator Projects">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://akshayk.github.io/tools/currency-converter.html" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Currency Converter - Calculator Projects">
+    <meta property="og:description" content="Free online currency converter with real-time exchange rates. Convert between USD, EUR, INR and more.">
+    <meta property="og:image" content="https://akshayk.github.io/tools/images/currency-converter.jpg">
+    <meta property="og:url" content="https://akshayk.github.io/tools/currency-converter.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Currency Converter - Calculator Projects">
+    <meta name="twitter:description" content="Free online currency converter with real-time exchange rates. Convert between USD, EUR, INR and more.">
+    <meta name="twitter:image" content="https://akshayk.github.io/tools/images/currency-converter.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Currency Converter",
+        "description": "Free online currency converter with real-time exchange rates",
+        "url": "https://akshayk.github.io/tools/currency-converter.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://akshayk.github.io/tools/"
+            },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Currency Converter"
+            }]
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Ad Section at the Top (Hidden) -->
+        <div class="row justify-content-center mt-3 d-none">
+            <div class="col-md-8 text-center">
+                <div class="ad-section">
+                    <!-- Ad content goes here -->
+                    <img src="images/ad-banner.jpg" alt="Advertisement" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar" id="sidebar">
+                <div class="title-wrapper">
+                    <h2 class="app-logo"><i class="fas fa-calculator"></i> Calc-Pro</h2>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input" id="darkModeSwitch" data-toggle="toggle">
+                        <label class="custom-control-label" for="darkModeSwitch"></label>
+                    </div>
+                </div>
+                <div class="top-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="currency-converter.html" class="active">Currency Converter</a></li>
+                        <li><a href="compound-interest-calculator.html">Compound Interest</a></li>
+                        <li><a href="seventh-pay-calculator.html">7th Pay</a></li>
+                        <li><a href="nft-royalty-calculator.html">NFT Royalty</a></li>
+                        <li><a href="crypto-profit-calculator.html">Crypto Profit</a></li>
+                        <li><a href="social-media-roi-calculator.html">Social Media ROI</a></li>
+                        <li><a href="ai-content-roi-calculator.html">AI Content ROI</a></li>
+                        <li><a href="digital-marketing-budget-calculator.html">Marketing Budget</a></li>
+                        <li><a href="loan-emi-calculator.html">Loan EMI</a></li>
+                        <li><a href="stock-investment-calculator.html">Stock Investment</a></li>
+                        <li><a href="retirement-savings-calculator.html">Retirement Savings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="content-body-wrapper mt-4 p-4 d-flex flex-column align-items-center">
+                    <div class="w-100" style="max-width: 800px;">
+                        <h1 class="mb-4 text-center">Currency Converter</h1>
+                        
+                        <section aria-labelledby="converter-section">
+                            <article class="card p-4 mb-4">
+                                <h2 id="converter-section" class="visually-hidden">Currency Conversion Tool</h2>
+                                <div class="input-group mb-3">
+                                    <input type="number" id="amount" class="form-control" placeholder="Enter amount">
+                                    <select id="fromCurrency" class="form-select">
+                                        <option value="USD">USD - US Dollar</option>
+                                        <option value="EUR">EUR - Euro</option>
+                                        <option value="INR">INR - Indian Rupee</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="number" id="convertedAmount" class="form-control" placeholder="Converted amount" readonly>
+                                    <select id="toCurrency" class="form-select">
+                                        <option value="USD">USD - US Dollar</option>
+                                        <option value="EUR">EUR - Euro</option>
+                                        <option value="INR">INR - Indian Rupee</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <button id="swapBtn" class="btn btn-secondary w-100 mb-3">
+                                        <i class="fas fa-exchange-alt"></i> Swap Currencies
+                                    </button>
+                                </div>
+                                <button id="convertBtn" class="btn btn-primary w-100 mb-3">Convert</button>
+                                <div id="result" class="text-center"></div>
+                            </article>
+
+                            <article class="card p-3">
+                                <h2 class="card-title">How to Use</h2>
+                                <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">Enter the amount you want to convert</li>
+                                    <li class="list-group-item">Select the currency you're converting from</li>
+                                    <li class="list-group-item">Select the currency you're converting to</li>
+                                    <li class="list-group-item">Click 'Convert' to see the result</li>
+                                    <li class="list-group-item">Use the swap button to reverse currencies</li>
+                                </ol>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Ad Section (Hidden) -->
+    <div class="row justify-content-center mt-4 d-none">
+        <div class="col-md-8 text-center">
+            <div class="ad-section">
+                <!-- Ad content goes here -->
+                <img src="images/ad-banner.jpg" alt="Advertisement" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="currency-converter.js"></script>
+</body>
+</html> 
