@@ -1,0 +1,96 @@
+Create a new calculator page with the following specifications:
+
+1. Page Structure:
+- Use the same layout as the currency converter page
+- Include the fixed sidebar with dark mode toggle
+- Center the main content with proper spacing
+- Add the page to the sidebar navigation in all existing pages
+- Maintain consistent card and form styling
+
+2. SEO Optimization:
+- Add relevant meta tags (title, description, keywords)
+- Include Open Graph and Twitter Card meta tags
+- Add structured data (Schema.org) using WebPage type
+- Use proper heading hierarchy (h1, h2, h3)
+- Add ARIA labels for accessibility
+- Include canonical URL
+
+3. Content Structure:
+- Add a main heading (h1) with the calculator name
+- Create a section for the calculator interface with:
+  * Clear input labels
+  * Appropriate input types and attributes
+  * Proper spacing and margins
+  * Validation for required fields
+- Include a "How to Use" section with:
+  * Numbered list of instructions
+  * Clear and concise steps
+  * Proper semantic markup
+- Use Bootstrap classes for styling and layout
+
+4. Features:
+- Include hidden ad sections (top and bottom)
+- Maintain dark mode compatibility
+- Ensure mobile responsiveness
+- Add proper error handling and input validation
+- Include keyboard support (Enter key to submit)
+- Add input constraints (min, max, step where appropriate)
+- Use Bootstrap alerts for success/error messages
+- Include proper type attributes for number inputs
+- Add input validation to prevent negative numbers
+
+5. JavaScript Implementation:
+- Create a main calculation function
+- Add proper error handling
+- Display results in a clear format
+- Include input validation
+- Add keyboard support
+- Use Bootstrap classes for result display
+- Format numbers appropriately
+- Clear previous results on new calculation
+
+6. File Structure:
+- Save the file as [calculator-name].html
+- Use the same CSS and JS files
+- Add the page to the sidebar navigation in all existing pages
+- Update the index page with a new calculator card
+- Maintain consistent file naming conventions
+
+7. Calculator Card Requirements (for index page):
+- Use Bootstrap card component
+- Include calculator name
+- Add brief description
+- Include "Go to Calculator" button
+- Maintain consistent styling with other cards
+- Add proper ARIA labels
+
+8. Implementation Checklist:
+- [ ] Add page to sidebar navigation
+- [ ] Create calculator interface
+- [ ] Add "How to Use" section
+- [ ] Implement JavaScript logic
+- [ ] Add input validation
+- [ ] Add error handling
+- [ ] Add success/error messages
+- [ ] Ensure mobile responsiveness
+- [ ] Test dark mode compatibility
+- [ ] Add page to index page cards
+- [ ] Update all existing pages' navigation
+
+Example for a BMI Calculator:
+
+1. Page Title: "BMI Calculator - Calculator Projects"
+2. Meta Description: "Calculate your Body Mass Index (BMI) with our free online BMI calculator. Understand your weight status and health risks."
+3. Keywords: "BMI calculator, body mass index, health calculator, weight calculator"
+4. Main Content:
+   - BMI calculation form (height, weight inputs)
+   - BMI result display
+   - BMI category chart
+   - Health recommendations based on BMI
+5. JavaScript Features:
+   - Input validation for height and weight
+   - BMI calculation formula
+   - Result display with category
+   - Error handling for invalid inputs
+
+Follow the same structure and styling as the currency converter page, adapting the content for the specific calculator type. 
