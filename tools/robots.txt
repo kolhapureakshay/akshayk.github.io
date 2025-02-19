@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://akshayk.github.io/tools/sitemap.xml 
+Sitemap: https://kolhapureakshay.github.io/tools/sitemap.xml 
