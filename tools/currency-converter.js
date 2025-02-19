@@ -1,6 +1,8 @@
 // Currency Converter Logic
-const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your actual API key
-const apiUrl = 'https://api.exchangerate-api.com/v4/latest/';
+const apiKey = '8c4b556efee6b933954339ce'; // Replace with your actual API key
+const apiUrl = 'https://api.exchangerate-api.com/v4/latest/'; // Replace with your actual API URL
+const fromCurrencyDropdown = document.getElementById('fromCurrency');
+const toCurrencyDropdown = document.getElementById('toCurrency');
 
 async function getExchangeRate(fromCurrency, toCurrency) {
     try {
@@ -28,12 +30,58 @@ async function convertCurrency() {
     
     if (exchangeRate) {
         const convertedValue = (amount * exchangeRate).toFixed(2);
-        document.getElementById('convertedAmount').value = convertedValue;
         resultDiv.innerHTML = `<p class="success">${amount} ${fromCurrency} = ${convertedValue} ${toCurrency}</p>`;
     } else {
         resultDiv.innerHTML = '<p class="error">Unable to get exchange rates. Please try again later.</p>';
     }
 }
+
+async function fetchCurrencyData() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        storeCurrencyData(data);
+        populateDropdowns(data);
+    } catch (error) {
+        console.error('Error fetching currency data:', error);
+    }
+}
+
+function storeCurrencyData(data) {
+    // Save data to localStorage for reuse
+    localStorage.setItem('currencyData', JSON.stringify(data));
+}
+
+function populateDropdowns(data) {
+    const currencies = Object.keys(data.rates);
+    currencies.forEach(currency => {
+        const fromOption = document.createElement('option');
+        fromOption.value = currency;
+        fromOption.textContent = `${currency} - ${data.rates[currency]}`;
+        fromCurrencyDropdown.appendChild(fromOption);
+
+        const toOption = document.createElement('option');
+        toOption.value = currency;
+        toOption.textContent = `${currency} - ${data.rates[currency]}`;
+        toCurrencyDropdown.appendChild(toOption);
+    });
+}
+
+// Check if currency data is already stored
+const storedData = localStorage.getItem('currencyData');
+if (storedData) {
+    populateDropdowns(JSON.parse(storedData));
+} else {
+    fetchCurrencyData();
+}
+
+// Placeholder function to reset currency data monthly
+function resetCurrencyData() {
+    localStorage.removeItem('currencyData');
+    fetchCurrencyData();
+}
+
+// Call resetCurrencyData() at the start of each month (you can set this up with a scheduler)
 
 // Event Listeners
 document.getElementById('convertBtn').addEventListener('click', convertCurrency);
