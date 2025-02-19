@@ -61,3 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
 if (document.getElementById('darkModeSwitch')) {
   document.getElementById('darkModeSwitch').addEventListener('change', toggleDarkMode);
 }
+
+document.getElementById('toggle-btn').addEventListener('click', function () {
+    var sidebar = document.getElementById('sidebar');
+    if (sidebar.style.left != '0px') {
+      sidebar.style.left = '0px';
+    } else {
+      sidebar.style.left = '-500px';
+    }
+});

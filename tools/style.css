@@ -703,3 +703,33 @@ input::placeholder {
   font-size: 14px;
   font-weight: 400;
 }
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333; /* Change to your preferred color */
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .header {
+      display: none; /* Hide the header with hamburger icon on desktop */
+  }
+}
